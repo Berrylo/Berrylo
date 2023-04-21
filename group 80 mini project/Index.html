@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Group 80 mini project</title>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="Styles/Lib/Alien.css/Alien.css">
+
+		<link rel="stylesheet" type="text/css" href="Styles/Style.css">
+
+		<script type="text/javascript" src="Scripts/Patterns.js"></script>
+		<script type="text/javascript" src="Scripts/Answers.js"></script>
+
+		<script type="text/javascript" src="Scripts/code.js"></script>
+
+		<script type="text/javascript" src="Scripts/ChatScreen.js"></script>
+	</head>
+	<body>
+		<div class="Main">
+			<div class="Header BottomSmallShadow">
+				<div class="HeaderTitle BlackText Center">
+					CODE BRIGADE WEB CHAT
+				</div>
+			</div>
+
+			<div class="GrayBox" id="GrayBox">
+				<div class="LanguageSelectionArea">
+					<div class="Button" id="FrançaisButton">Français</div>
+					<div class="Button" id="EnglishButton">English</div>
+				</div>
+			</div>
+
+			<div class="MessagesArea" id="MessagesArea"></div>
+
+			<div class="Bottom">
+				<input type="text" name="MessageEntry" class="MessageEntry" id="MessageEntry" placeholder="Type your message...">
+			</div>
+
+
+			<script type="text/javascript">
+				var FrançaisButton = document.getElementById("FrançaisButton");
+				var EnglishButton = document.getElementById("EnglishButton");
+
+				FrançaisButton.addEventListener ("mousedown", function (Event) {
+					code.Language = "Français";
+
+					var GrayBox = document.getElementById ("GrayBox");
+					GrayBox.parentNode.removeChild (GrayBox);
+
+					ChatScreen.Input.setAttribute("placeholder", "Digite sua mensagem...");
+
+				});
+
+				EnglishButton.addEventListener ("mousedown", function (Event) {
+					code.Language = "English";
+
+					var GrayBox = document.getElementById ("GrayBox");
+					GrayBox.parentNode.removeChild (GrayBox);
+
+					ChatScreen.Input.setAttribute("placeholder", "Type your message...");
+
+				});
+
+
+				ChatScreen.Start ();
+			</script>
+		</div>
+	</body>
+</html>
